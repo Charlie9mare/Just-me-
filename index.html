@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Property Co. | Residential Application</title>
+<meta name="description" content="Apply online to rent a residential property.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Cpath d=%27M4 15 16 5l12 10v12H4z%27 fill=%27%230a4f49%27/%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14262b;--mut:#53666a;--bg:#eef3f2;--card:#fff;--line:#cfdad8;--teal:#0e6b63;--teald:#0a4f49;--tint:#e3f1ee;--brass:#8a5a0c;--brassbg:#fbf1dc;--red:#b3261e;--redbg:#fdeceb;--fld:#9db0ae;--onteal:#fff}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#e8f0ef;--mut:#a5b8b6;--bg:#0f1b1d;--card:#16282a;--line:#2c4244;--teal:#35a89c;--teald:#0c2d2b;--tint:#17393a;--brass:#e7b861;--brassbg:#33290f;--red:#ff8a80;--redbg:#3a1a18;--fld:#5d7876;--onteal:#06201d}}
+:root[data-theme=dark]{--ink:#e8f0ef;--mut:#a5b8b6;--bg:#0f1b1d;--card:#16282a;--line:#2c4244;--teal:#35a89c;--teald:#0c2d2b;--tint:#17393a;--brass:#e7b861;--brassbg:#33290f;--red:#ff8a80;--redbg:#3a1a18;--fld:#5d7876;--onteal:#06201d}
+*{box-sizing:border-box}
+html,body{height:auto}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;line-height:1.2}
+a{color:var(--teal)}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px;padding:12px max(16px,calc((100% - 1060px)/2));background:var(--teald);color:#fff}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font:1.15rem "Young Serif",serif}
+.brand svg{width:30px;height:30px}
+nav{display:flex;align-items:center;gap:4px 16px;flex-wrap:wrap}
+nav a{color:#d6ece8;text-decoration:none;font-weight:500;padding:8px 2px}nav a[aria-current]{color:#fff;text-decoration:underline}
+nav .btn{color:var(--teald);background:#fff;text-decoration:none}
+main{max-width:1060px;margin:0 auto;padding:0 16px 40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:10px;font:600 1rem Figtree,sans-serif;cursor:pointer;border:1.5px solid transparent;text-decoration:none}
+.btn.p{background:var(--teal);color:var(--onteal)}.btn.g{background:var(--card);border-color:var(--fld);color:var(--ink)}
+.btn.big{min-height:54px;padding:0 28px;font-size:1.05rem}.btn.sm{min-height:40px;padding:0 16px}
+.btn:focus-visible,input:focus,select:focus,textarea:focus,summary:focus-visible{outline:3px solid #7cc4bb;outline-offset:1px}
+.btn[disabled]{opacity:.55;cursor:wait}
+.hero{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center;padding:42px 0 30px}
+.hero h1{font-size:clamp(2rem,5vw,3.1rem);margin:0 0 14px}.lead{font-size:1.12rem;color:var(--mut);margin:0 0 22px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.box h2{margin:0 0 10px;font-size:1.2rem}.box ul{margin:0;padding-left:20px}.box li{margin:6px 0}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:26px}}
+.band{padding:34px 0}.band h2{font-size:1.7rem;margin:0 0 18px}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;list-style:none;margin:0;padding:0;counter-reset:s}
+.g4 li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.g4 h3{margin:0 0 6px;font-size:1.1rem}.g4 h3:before{content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;margin-right:9px;border-radius:50%;background:var(--teal);color:var(--onteal);font:600 .9rem Figtree}
+.g4 p,.facts p{margin:0;color:var(--mut)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.facts article{border-left:4px solid var(--teal);padding-left:14px}.facts h3{margin:0 0 4px;font-size:1.1rem}
+.fine{font-size:.9rem;color:var(--mut);margin-top:14px}
+.faq{max-width:760px}.faq details{border-bottom:1px solid var(--line)}.faq summary{cursor:pointer;font-weight:600;padding:12px 0;min-height:48px}.faq p{margin:0 0 12px;color:var(--mut)}
+footer{background:var(--teald);color:#d6ece8;padding:20px max(16px,calc((100% - 1060px)/2));display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.9rem}footer p{margin:0}footer a{color:#fff}
+/* form */
+.wrap{max-width:720px;margin:0 auto}.wrap h1{font-size:1.7rem;margin:22px 0 0}
+.prog{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0 8px}
+.segs{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:4px}.segs i{height:7px;border-radius:4px;background:var(--line)}.segs i.d{background:var(--teal)}.segs i.n{background:var(--teal);opacity:.5}
+.pt{display:flex;justify-content:space-between;margin:6px 0 0;font-size:.85rem;color:var(--mut)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 18px;margin-top:10px}
+.step h2{margin:0 0 16px;font-size:1.45rem}.step{animation:in .28s ease-out}@keyframes in{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px}.fld{grid-column:1/-1;min-width:0}.fld.w{grid-column:span 1}.fld[hidden]{display:none}
+@media(max-width:520px){.fld.w{grid-column:1/-1}}
+label,.lb{display:block;font-weight:600;margin-bottom:5px;font-size:.95rem}.rq:after{content:" *";color:var(--red)}
+input[type=text],input[type=email],input[type=tel],input[type=number],input[type=date],input[type=datetime-local],input[type=password],input[type=search],select,textarea{width:100%;min-height:48px;padding:11px 12px;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--fld);border-radius:10px}
+textarea{min-height:100px;resize:vertical}
+.fld.bad input,.fld.bad select,.fld.bad textarea{border-color:var(--red);background:var(--redbg)}
+.err{display:block;margin-top:5px;color:var(--red);font-size:.88rem;font-weight:500}.hint{margin:4px 0 0;font-size:.85rem;color:var(--mut)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}.pill{position:relative;margin:0}.pill input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.pill span{display:inline-flex;align-items:center;min-height:46px;padding:0 16px;border:1.5px solid var(--fld);border-radius:999px;background:var(--card);font-weight:500}
+.pill input:checked+span{background:var(--teal);border-color:var(--teal);color:var(--onteal)}.pill input:focus-visible+span{outline:3px solid #7cc4bb}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:12px;border:1.5px solid var(--fld);border-radius:10px;cursor:pointer;font-weight:500}.chk input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--teal);flex:none}
+.note{border-left:4px solid var(--teal);background:var(--tint);padding:12px 14px;border-radius:8px;font-size:.93rem}.note.warn,.note.demo{border-color:var(--brass);background:var(--brassbg)}
+.fld h3{margin:8px 0 0;padding-top:10px;border-top:1px solid var(--line);font-size:1.08rem}
+.badge{margin-left:8px;padding:1px 8px;border-radius:999px;background:var(--brassbg);color:var(--brass);font-size:.75rem;font-weight:700;border:1px solid var(--brass)}
+input[type=file]{width:100%;padding:12px;border:2px dashed var(--fld);border-radius:10px;background:var(--card);color:var(--ink);font:inherit}
+.rv{display:grid;gap:12px;margin-bottom:14px}.rv section{border:1px solid var(--line);border-radius:10px;padding:12px 14px}.rv header{background:none;color:inherit;padding:0;margin-bottom:6px}.rv h3{margin:0;font-size:1.05rem}
+.rv button{background:none;border:0;color:var(--teal);font:600 1rem Figtree;cursor:pointer;min-height:40px}.rv dl,.dl{margin:0;display:grid;grid-template-columns:minmax(0,38%) 1fr;gap:4px 12px;font-size:.9rem}.rv dt,.dl dt{color:var(--mut)}.rv dd,.dl dd{margin:0;overflow-wrap:anywhere}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}.acts .p{margin-left:auto}
+@media(max-width:520px){.acts .btn{flex:1 1 40%}.acts .p{flex-basis:100%;order:-1;margin-left:0}}
+.toast{min-height:1.4em;margin:10px 0 0;font-size:.9rem;font-weight:500;color:var(--teal)}.toast.bad{color:var(--red)}
+.ban{margin-top:12px;padding:12px 14px;border-radius:10px;background:var(--brassbg);color:var(--ink);border:1px solid var(--brass)}
+.hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.done{text-align:center;padding:34px 18px}.tick{width:64px;height:64px;color:var(--onteal);background:var(--teal);border-radius:50%;padding:14px;animation:pop .4s cubic-bezier(.2,1.4,.4,1)}@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none}}
+.ref{font:1.5rem "Young Serif",serif;letter-spacing:.04em;background:var(--tint);display:inline-block;padding:8px 16px;border-radius:10px;user-select:all}
+.spin:before{content:"";display:inline-block;width:16px;height:16px;margin-right:8px;border:2.5px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sp .7s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+/* admin */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:14px 0}.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}.stat b{display:block;font:1.5rem "Young Serif",serif}
+.tb{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.tb>*{flex:1 1 200px}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;font-size:.92rem}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}tbody tr{cursor:pointer}tbody tr:hover,tbody tr:focus{background:var(--tint);outline:none}
+.st{padding:2px 10px;border-radius:999px;font-size:.8rem;font-weight:600;background:var(--line)}.st.Pending{background:var(--brassbg);color:var(--brass)}.st.Approved{background:#dff3e6;color:#1e6b3c}.st.Rejected{background:var(--redbg);color:var(--red)}.st.UR{background:#e1ebfa;color:#1f4e9c}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#/"><!-- Replace with your logo: <img src="logo.png" alt="Company"> --><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15 16 5l12 10v12H4z" fill="currentColor"/><rect x="13" y="18" width="6" height="9" fill="#0a4f49"/></svg><span>Your Property Co.</span></a>
+  <nav aria-label="Main"><a href="#/" id="n-home">Home</a><a href="#/admin" id="n-admin" hidden>Admin</a><a class="btn sm" href="#/apply" id="n-apply">Apply</a></nav>
+</header>
+<main id="v"></main>
+<footer><p>Your Property Co. &bull; Applications are reviewed by the landlord only.</p><p><a href="#/">Home</a> &bull; <a href="#/apply">Apply</a></p></footer>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const h=(t,a={},...k)=>{const e=document.createElement(t);for(const[x,v]of Object.entries(a)){if(v==null||v===false)continue;if(x==='text')e.textContent=v;else if(x==='class')e.className=v;else if(x.startsWith('on'))e.addEventListener(x.slice(2),v);else e.setAttribute(x,v===true?'':v)}k.flat().forEach(c=>c!=null&&e.append(c));return e};
+const YN=['Yes','No'],N=(l,k)=>({t:'note',l,k}),H=l=>({t:'head',l});
+// n=name l=label t=type r=required o=options s=[field,[values]] h=hint w=half d=demo
+const S=[
+{title:'Before you start',f:[
+ N('Tenant screening is how a landlord finds the right tenant for a property. The right tenant differs from landlord to landlord, so each landlord sets and keeps their own screening criteria.'),
+ N('The application fee is $75 per adult. Your application stays pending (qualified applicants only) until the fee is paid. The fee is refundable if you are no longer interested in renting the property or do not qualify, under the payment agreement with the landlord.','warn'),
+ N('The applicant completing this form must be over the age of 18. Please fill in the form completely and submit it.'),
+ {n:'over18',t:'checkbox',l:'I confirm that I am 18 years or older.',r:1}]},
+{title:'Applicant information',f:[
+ {n:'first_name',l:'First name',t:'text',r:1,w:1,a:'given-name'},{n:'middle_name',l:'Middle name',t:'text',w:1,a:'additional-name'},{n:'last_name',l:'Last name',t:'text',r:1,a:'family-name'},
+ {n:'phone',l:'Phone number',t:'tel',r:1,im:'tel',a:'tel',h:'Include the country code if outside the US, e.g. +1 555 123 4567'},
+ {n:'email',l:'Email address',t:'email',r:1,im:'email',a:'email',p:'example@example.com'},H('Current address'),
+ {n:'addr_street',l:'Street address',t:'text',r:1,a:'address-line1'},{n:'addr_street2',l:'Street address line 2',t:'text'},
+ {n:'addr_city',l:'City',t:'text',r:1,w:1,a:'address-level2'},{n:'addr_state',l:'State / province',t:'text',r:1,w:1,a:'address-level1'},
+ {n:'addr_zip',l:'Postal / zip code',t:'text',r:1,w:1,a:'postal-code'},{n:'addr_country',l:'Country',t:'select',r:1,o:'C',w:1,a:'country-name'}]},
+{title:'Household',f:[
+ {n:'adults',l:'How many adults will be occupying the house?',t:'number',r:1,min:1,max:20,im:'numeric'},
+ {n:'bankruptcy',l:'Have you filed for bankruptcy in the past seven years?',t:'radio',r:1,o:YN},
+ {n:'smoking',l:'Does anyone in your household smoke cigarettes or marijuana?',t:'radio',r:1,o:YN,h:'Smoking is allowed outside the house only.'},
+ {n:'funds',l:'Do you have money set aside for the security deposit and first month\u2019s rent?',t:'radio',r:1,o:YN},
+ {n:'marital',l:'Marital status',t:'radio',r:1,o:['Single','Married','Divorced','Widowed','Separated']}]},
+{title:'Pets',f:[
+ N('Pet deposit: a refundable fee of $500 paid before move-in and held by the landlord, like the security deposit, to cover damage by the pet during the lease. Pet fee: a one-time, refundable $500 charge in place of a pet deposit.'),
+ N('Pets are allowed only if they are not destructive to the property.'),
+ {n:'has_pets',l:'Do you have pets?',t:'radio',r:1,o:YN},
+ {n:'pet_count',l:'How many pets do you own?',t:'number',r:1,min:1,max:20,im:'numeric',s:['has_pets',['Yes']]}]},
+{title:'Rental history',f:[
+ {n:'vacate',l:'Reason for vacating your present rental',t:'textarea'},
+ {n:'refused_rent',l:'Have you ever refused to pay rent when due?',t:'radio',r:1,o:YN},
+ {n:'evicted',l:'Have you ever been evicted? If so, why?',t:'textarea',r:1,h:'Write \u201cNo\u201d if you have never been evicted.'}]},
+{title:'Employment and income',f:[
+ {n:'emp',l:'Employment status',t:'radio',r:1,o:['Employed','Unemployed','Self-employed','Retired','Student']},
+ {n:'emp_first',l:'Employer first name',t:'text',r:1,w:1,s:['emp',['Employed','Self-employed']]},{n:'emp_last',l:'Employer last name',t:'text',r:1,w:1,s:['emp',['Employed','Self-employed']]},
+ {n:'income',l:'Combined monthly income (USD)',t:'number',r:1,min:0,max:10000000,im:'decimal'}]},
+{title:'Property and move-in',f:[H('Property you are applying for'),
+ {n:'p_street',l:'Street address',t:'text',r:1},{n:'p_street2',l:'Street address line 2',t:'text'},
+ {n:'p_city',l:'City',t:'text',r:1,w:1},{n:'p_state',l:'State / province',t:'text',r:1,w:1},{n:'p_zip',l:'Postal / zip code',t:'text',r:1,w:1},{n:'p_country',l:'Country',t:'select',r:1,o:'C',w:1},
+ {n:'deposit_date',l:'Earliest possible date of deposit payment',t:'date',r:1,fut:1},{n:'movein',l:'Desired move-in date',t:'date',fut:1},
+ {n:'cash',l:'How much do you have on hand to secure the property? (USD)',t:'number',min:0,max:10000000,im:'decimal'},
+ {n:'pay_method',l:'Preferred payment method for the application fee',t:'radio',r:1,o:['Zelle','Chime','PayPal','Walmart to Walmart','Apple Pay','Venmo','ATM cash deposit'],h:'This only records your preference. This website never takes payment.'}]},
+{title:'Documents',f:[
+ N('Identification must be government-issued, such as a driver\u2019s license, passport or military ID.'),
+ N('Class project: the fields marked \u201cDemo only\u201d show where this information would go. They are never sent or saved. Do not type real personal data into them.','demo'),
+ {n:'selfie',l:'Photo selfie (a clear photo)',t:'file',d:1},{n:'ssn',l:'Social security number',t:'text',d:1,im:'numeric',p:'Demo only'},
+ {n:'id_front',l:'ID \u2013 front picture',t:'file',d:1},{n:'id_back',l:'ID \u2013 back picture',t:'file',d:1},H('Income history and verification'),
+ N('Upload proof of current income type, employment details and contact info, monthly income, and previous jobs in the past 3 years. Pay stubs, W-2s, tax returns and bank statements are all accepted.'),
+ {n:'income_docs',l:'Upload income history documents',t:'file',r:1,multi:1,acc:'.pdf,.jpg,.jpeg,.png',h:'PDF, JPG or PNG. Up to 5 files, 8 MB each.'}]},
+{title:'Refund card',f:[
+ N('Demo only. This screen shows where refund card details would go. Nothing typed here leaves your browser or is stored. Do not enter a real card.','demo'),
+ {n:'c_name',l:'Name of card holder',t:'text',d:1},{n:'c_num',l:'Card number',t:'text',d:1,im:'numeric',p:'Demo only'},
+ {n:'c_exp',l:'Expiry date',t:'text',d:1,w:1,p:'MM/YY'},{n:'c_cvv',l:'CVV / CVC',t:'text',d:1,w:1,im:'numeric'},
+ {n:'c_zip',l:'Billing zip code',t:'text',d:1,w:1},{n:'c_country',l:'Country',t:'select',d:1,o:'C',w:1},
+ N('Everything you submit is stored so that only the landlord\u2019s administrators can read it.')]},
+{title:'Viewing and final notes',f:[
+ {n:'appt',l:'What time is convenient to come view the property?',t:'datetime-local'},
+ {n:'extra',l:'Is there anything else we should know about you and your living situation?',t:'textarea'},
+ {n:'questions',l:'Do you have any questions about the property or the rental application process?',t:'textarea'},
+ N('The property has a smart lock that uses smart codes. If the tenant chooses to switch to a key, the tenant is responsible for the lock change and locksmith.'),
+ N('We advertise across integrated ad networks including Zillow, Apartments.com, Trulia, Hotpads, Zumper, Invitation Homes, Avail.co and more.')]},
+{title:'Review and submit',rv:1,f:[
+ {n:'signature',l:'Type your full name as your electronic signature',t:'text',r:1,a:'name'},
+ {n:'declaration',l:'I declare that the information I have given is true and complete.',t:'checkbox',r:1},
+ {n:'consent',l:'I consent to my application data being stored and reviewed by the landlord for tenant screening only.',t:'checkbox',r:1}]}
+];
+const ALL=S.flatMap((s,i)=>s.f.map(f=>({...f,si:i}))),REAL=ALL.filter(f=>f.n&&!f.d&&f.t!=='file');
+const STAT=['Pending','Under Review','Approved','Rejected'];
+const COUNTRIES=(()=>{const dn=new Intl.DisplayNames(['en'],{type:'region'}),o=new Set();for(let a=65;a<91;a++)for(let b=65;b<91;b++){const c=String.fromCharCode(a,b);try{const n=dn.of(c);if(n&&n!==c&&!/Unknown/i.test(n))o.add(n)}catch(e){}}return[...o].sort((x,y)=>x.localeCompare(y)).concat('Other')})();
+
+// ---- capabilities (null when this view cannot use them; the page says so instead of faking) ----
+let DB=null,ASSETS=null,ADMIN=false;
+const ready=(async()=>{try{DB=await claude.use('db')}catch(e){}try{ASSETS=await claude.use('assets')}catch(e){}
+ try{const u=await claude.use('user');ADMIN=!!(u&&await u.canEdit())}catch(e){}$('#n-admin').hidden=!ADMIN;})();
+
+// ---- routing ----
+const v=$('#v');
+function route(){const r=location.hash.replace('#','')||'/';document.querySelectorAll('nav a').forEach(a=>a.removeAttribute('aria-current'));
+ if(r==='/apply'){$('#n-apply').setAttribute('aria-current','page');applyView()}else if(r==='/admin'){$('#n-admin').setAttribute('aria-current','page');adminView()}else{$('#n-home').setAttribute('aria-current','page');homeView()}
+ scrollTo(0,0);document.title=({'/apply':'Apply online',' /admin':'Admin'}[r]||'Rent a home')+' | Your Property Co.'}
+addEventListener('hashchange',route);
+
+// ---- home ----
+function homeView(){v.innerHTML=`
+<section class="hero"><div><h1>Apply to rent your next home, online.</h1><p class="lead">One application, about 15 minutes. Save a draft and return any time on the same device.</p>
+<div class="row"><a class="btn p big" href="#/apply">Start your application</a><a class="btn g big" href="#process">How it works</a></div></div>
+<aside class="box"><h2>Have these ready</h2><ul><li>You are 18 or older</li><li>Your current address and rental history</li><li>Employer details and monthly income</li><li>Proof of income: pay stubs, W-2s, tax returns or bank statements</li><li>Your preferred move-in and viewing dates</li></ul></aside></section>
+<section class="band" id="process"><h2>How it works</h2><ol class="g4"><li><h3>Apply</h3><p>Fill in the online application and add proof of income.</p></li><li><h3>Pay the fee</h3><p>The application fee is $75 per adult. Your application stays pending until it is paid.</p></li><li><h3>Screening</h3><p>The landlord reviews your application against their own screening criteria.</p></li><li><h3>View the property</h3><p>Pick a viewing time that suits you and ask your questions.</p></li></ol>
+<p class="fine">The fee is refundable if you are no longer interested or do not qualify, under the payment agreement with the landlord. This website never takes payment.</p></section>
+<section class="band"><h2>About the property and its rules</h2><div class="facts"><article><h3>Pets</h3><p>Allowed only if not destructive. A refundable $500 pet deposit, or a one-time refundable $500 pet fee instead.</p></article><article><h3>Smoking</h3><p>Cigarettes and marijuana are allowed outside the house only.</p></article><article><h3>Smart lock</h3><p>The property uses smart codes. Switching to a key means you pay for the lock change and locksmith.</p></article><article><h3>Move-in costs</h3><p>You will be asked whether you have money set aside for the deposit and first month\u2019s rent.</p></article></div></section>
+<section class="band"><h2>Questions</h2><div class="faq">
+<details><summary>Who can apply?</summary><p>The applicant must be over 18. Each adult who will live in the home counts toward the application fee.</p></details>
+<details><summary>Can I stop and finish later?</summary><p>Yes. Use Save draft. Typed answers stay in your browser on that device; re-select any files before submitting.</p></details>
+<details><summary>What happens after I submit?</summary><p>You get a reference number straight away. Your status starts as Pending, then Under Review, then Approved or Rejected.</p></details>
+<details><summary>Is my information private?</summary><p>Submitted applications can be read only by the landlord\u2019s administrators.</p></details>
+<details><summary>Why do some fields say \u201cDemo only\u201d?</summary><p>This is a class project. Fields such as ID photos, SSN and card details are never sent or saved. Please do not enter real personal data in them.</p></details></div>
+<p style="margin-top:24px"><a class="btn p big" href="#/apply">Start your application</a></p></section>`}
+
+// ---- application form ----
+let V={},FILES={},step=0,t0=Date.now();const DK='ra_site_draft_v1';
+const shown=f=>!f.s||f.s[1].includes(V[f.s[0]]);
+function applyView(){
+ try{const d=JSON.parse(localStorage.getItem(DK)||'null');if(d&&!Object.keys(V).length){V=d.v;step=d.step||0}}catch(e){}
+ v.innerHTML='';const w=h('div',{class:'wrap'});v.append(w);
+ w.append(h('h1',{text:'Residential application'}),
+  h('div',{class:'prog','aria-live':'polite'},h('div',{class:'segs',id:'segs','aria-hidden':'true'},S.map(()=>h('i'))),h('p',{class:'pt'},h('span',{id:'sl'}),h('span',{id:'pc'}))),
+  h('div',{class:'ban',id:'dbban',hidden:true}));
+ const form=h('form',{class:'card',novalidate:true,id:'form'},h('div',{class:'hp','aria-hidden':'true'},h('label',{text:'Leave empty '},h('input',{type:'text',name:'website',tabindex:'-1',autocomplete:'off'}))),
+  h('div',{id:'body'}),
+  h('div',{class:'acts'},h('button',{type:'button',class:'btn g',id:'pv',text:'Previous',onclick:()=>go(step-1)}),h('button',{type:'button',class:'btn g',text:'Save draft',onclick:()=>save(true)}),
+   h('button',{type:'button',class:'btn p',id:'nx',text:'Next',onclick:next}),h('button',{type:'submit',class:'btn p',id:'sb',text:'Submit application'})),
+  h('p',{class:'toast',id:'ts',role:'status','aria-live':'polite'}));
+ w.append(form,h('section',{class:'card done',id:'dn',hidden:true,tabindex:'-1'}));
+ form.addEventListener('input',onIn);form.addEventListener('change',onIn);form.addEventListener('submit',submit);
+ form.addEventListener('focusout',e=>{const f=fld(e.target);if(f&&e.target.type!=='radio'&&e.target.type!=='file')err(f,check(f))});
+ form.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.tagName==='INPUT'&&step<S.length-1){e.preventDefault();next()}});
+ ready.then(()=>{if(!DB){const b=$('#dbban');b.hidden=false;b.textContent='Saving is not available in this view, so applications cannot be submitted. Open this page while signed in to claude.ai.'}});
+ go(step,false)}
+const fld=el=>{const w=el.closest&&el.closest('[data-n]');return w&&ALL.find(f=>f.n===w.dataset.n)};
+function ctl(f){const c={id:f.n,name:f.n,autocomplete:f.d?'off':f.a,inputmode:f.im,placeholder:f.p};
+ if(f.t==='textarea')return h('textarea',{...c,rows:4,maxlength:2000});
+ if(f.t==='select'){const s=h('select',c,h('option',{value:'',text:'Select\u2026'}));COUNTRIES.forEach(o=>s.append(h('option',{value:o,text:o})));return s}
+ if(f.t==='radio')return h('div',{class:'pills',role:'radiogroup','aria-labelledby':'l-'+f.n},f.o.map(o=>h('label',{class:'pill'},h('input',{type:'radio',name:f.n,value:o}),h('span',{text:o}))));
+ if(f.t==='file')return h('input',{...c,type:'file',accept:f.acc||'image/*',multiple:f.multi});
+ const a={...c,type:f.t,maxlength:200};if(f.t==='number'){a.min=f.min;a.max=f.max;a.step=f.im==='decimal'?'0.01':'1'}if(f.fut)a.min=new Date().toISOString().slice(0,10);return h('input',a)}
+function field(f){
+ if(f.t==='note')return h('div',{class:'fld'},h('div',{class:'note '+(f.k||''),text:f.l}));
+ if(f.t==='head')return h('div',{class:'fld'},h('h3',{text:f.l}));
+ const w=h('div',{class:'fld'+(f.w?' w':''),'data-n':f.n});
+ if(f.t==='checkbox')w.append(h('label',{class:'chk'},h('input',{type:'checkbox',id:f.n,name:f.n}),h('span',{text:f.l})));
+ else{const lb=h('label',{id:'l-'+f.n,for:f.t==='radio'?null:f.n,class:f.r?'rq':'',text:f.l});if(f.d)lb.append(h('span',{class:'badge',text:'Demo only'}));w.append(lb,ctl(f))}
+ if(f.h)w.append(h('p',{class:'hint',id:'h-'+f.n,text:f.h}));
+ if(f.t==='file'&&!f.d)w.append(h('ul',{class:'hint',id:'fl-'+f.n}));
+ w.append(h('span',{class:'err',id:'e-'+f.n,role:'alert'}));
+ const i=w.querySelector('input,select,textarea');if(i)i.setAttribute('aria-describedby',(f.h?'h-'+f.n+' ':'')+'e-'+f.n);
+ const val=V[f.n];if(val!=null&&!f.d&&f.t!=='file'){if(f.t==='radio'){const r=w.querySelector(`input[value="${CSS.escape(val)}"]`);if(r)r.checked=true}else if(f.t==='checkbox')i.checked=!!val;else i.value=val}
+ return w}
+function go(i,move=true){step=Math.max(0,Math.min(S.length-1,i));const s=S[step],b=$('#body');b.replaceChildren(h('section',{class:'step'},h('h2',{id:'st',tabindex:'-1',text:s.title}),s.rv?h('div',{class:'rv',id:'rv'}):null,h('div',{class:'grid'},s.f.map(field))));
+ $('#pv').hidden=step===0;$('#nx').hidden=step===S.length-1;$('#sb').hidden=step!==S.length-1;if(s.rv)review();vis();prog();
+ if(move){scrollTo({top:0,behavior:'smooth'});$('#st').focus({preventScroll:true})}}
+function vis(){ALL.filter(f=>f.si===step&&f.s).forEach(f=>{const w=$(`[data-n="${f.n}"]`);if(w)w.hidden=!shown(f)})}
+function prog(){const rq=ALL.filter(f=>f.n&&f.r&&!f.d&&shown(f));const done=rq.filter(f=>f.t==='file'?FILES[f.n]?.length:V[f.n]).length;
+ $('#pc').textContent=Math.round(done/rq.length*100)+'% of required answers';$('#sl').textContent=`Step ${step+1} of ${S.length}: ${S[step].title}`;
+ [...$('#segs').children].forEach((x,i)=>x.className=i<step?'d':i===step?'n':'')}
+function onIn(e){const f=fld(e.target);if(!f||f.d)return;const t=e.target;
+ if(f.t==='file'){FILES[f.n]=[...t.files];$('#fl-'+f.n)?.replaceChildren(...FILES[f.n].map(x=>h('li',{text:`${x.name} (${Math.max(1,Math.round(x.size/1024))} KB)`})))}
+ else V[f.n]=f.t==='checkbox'?t.checked:t.value.trim();
+ if($(`[data-n="${f.n}"]`).classList.contains('bad'))err(f,check(f));vis();prog();clearTimeout(onIn.t);onIn.t=setTimeout(()=>save(false),500)}
+const EM=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+function check(f){if(!f.n||f.d||!shown(f))return'';const x=V[f.n];
+ if(f.t==='file'){const fs=FILES[f.n]||[];if(f.r&&!fs.length&&ASSETS)return'Upload at least one document.';if(fs.length>5)return'Upload no more than 5 files.';for(const a of fs){if(a.size>8388608)return a.name+' is larger than 8 MB.';if(!/\.(pdf|jpe?g|png)$/i.test(a.name))return a.name+' must be a PDF, JPG or PNG.'}return''}
+ if(f.t==='checkbox')return f.r&&!x?'This box must be checked.':'';
+ if(!x)return f.r?'This field is required.':'';
+ if(f.t==='email'&&!EM.test(x))return'Enter a valid email address, like name@example.com.';
+ if(f.t==='tel'){const d=x.replace(/\D/g,'');if(!/^\+?[\d\s().-]+$/.test(x)||d.length<7||d.length>15)return'Enter a valid phone number, 7 to 15 digits.'}
+ if(f.t==='number'){const n=Number(x);if(!isFinite(n)||n<(f.min??-1/0)||n>(f.max??1/0))return`Enter a number between ${f.min??0} and ${f.max}.`}
+ if(f.t==='date'){if(isNaN(Date.parse(x)))return'Enter a valid date.';if(f.fut&&x<new Date().toISOString().slice(0,10))return'Choose today or a future date.'}
+ return''}
+function err(f,m){const w=$(`[data-n="${f.n}"]`);if(!w)return;w.classList.toggle('bad',!!m);$('#e-'+f.n).textContent=m;const i=w.querySelector('input,select,textarea');i&&i.setAttribute('aria-invalid',m?'true':'false')}
+function vStep(i,focus=true){let first=null;S[i].f.forEach(f=>{if(!f.n)return;const m=check(f);if(i===step)err(f,m);if(m&&!first)first={f,m}});
+ if(first&&focus&&i===step){const w=$(`[data-n="${first.f.n}"]`);w.scrollIntoView({block:'center',behavior:'smooth'});(w.querySelector('input,select,textarea')||w).focus({preventScroll:true})}return first}
+function say(m,bad){const t=$('#ts');t.textContent=m;t.classList.toggle('bad',!!bad)}
+function next(){if(vStep(step))say('Fix the highlighted fields to continue.',true);else{say('');go(step+1)}}
+function save(announce){try{localStorage.setItem(DK,JSON.stringify({v:V,step}));if(announce)say('Draft saved on this device. Files are not kept in drafts.')}catch(e){if(announce)say('Your browser blocked saving the draft.',true)}}
+function review(){const b=$('#rv');S.forEach((s,si)=>{if(s.rv)return;const rows=s.f.filter(f=>f.n&&!f.d&&f.t!=='file'&&f.n!=='over18'&&shown(f)).flatMap(f=>[h('dt',{text:f.l.replace(/\?$/,'')}),h('dd',{text:f.t==='checkbox'?(V[f.n]?'Yes':'No'):V[f.n]||'\u2013'})]);
+ if(rows.length)b.append(h('section',{},h('header',{},h('h3',{text:s.title}),h('button',{type:'button',text:'Edit','aria-label':'Edit '+s.title,onclick:()=>go(si)})),h('dl',{},rows)))})}
+const mkRef=()=>'RA-'+new Date().toISOString().slice(0,10).replace(/-/g,'')+'-'+[...crypto.getRandomValues(new Uint8Array(3))].map(x=>x.toString(16).padStart(2,'0')).join('').toUpperCase();
+async function submit(e){e.preventDefault();
+ for(let i=0;i<S.length;i++){const bad=vStep(i,false);if(bad){go(i);vStep(i);say('Please complete this step before submitting.',true);return}}
+ if($('[name=website]').value||Date.now()-t0<8000){say('Please take a moment to review your answers before submitting.',true);return}
+ await ready;if(!DB){say('Saving is not available in this view. Nothing was submitted.',true);return}
+ const b=$('#sb');b.disabled=true;b.classList.add('spin');b.textContent='Submitting\u2026';say('');
+ try{const rec={};REAL.forEach(f=>{if(shown(f)&&V[f.n]!=null&&V[f.n]!=='')rec[f.n]=V[f.n]});
+  const ref=mkRef(),docs=[];
+  if(ASSETS)for(const f of FILES.income_docs||[]){const r=await ASSETS.upload(f);docs.push({id:r.id,name:f.name.slice(0,120),size:f.size})}
+  await DB.collection('applications').doc(ref).set({ref,created:new Date().toISOString(),status:'Pending',notes:'',name:rec.first_name+' '+rec.last_name,email:rec.email,phone:rec.phone,property:rec.p_street+', '+rec.p_city,data:rec,docs});
+  try{localStorage.removeItem(DK)}catch(x){}V={};FILES={};
+  $('#form').hidden=true;document.querySelector('.prog').hidden=true;const d=$('#dn');d.hidden=false;
+  d.replaceChildren(h('h2',{text:'Application received'}),h('p',{text:'Your reference number is'}),h('p',{},h('span',{class:'ref',text:ref})),h('p',{text:'Keep this number and quote it if you contact the landlord. Your status starts as Pending.'}));d.focus();scrollTo(0,0);return
+ }catch(x){say(x&&x.code==='not_granted'?'Your account is not allowed to submit applications here.':'We could not save your application. Please try again.',true)}
+ b.disabled=false;b.classList.remove('spin');b.textContent='Submit application'}
+
+// ---- admin ----
+async function adminView(){v.innerHTML='';await ready;
+ if(!ADMIN||!DB){v.append(h('div',{class:'wrap'},h('h1',{text:'Admin'}),h('p',{text:'Only administrators can view applications. Sign in to claude.ai with an account that has edit access to this page.'})));return}
+ const wrap=h('div',{},h('h1',{text:'Applications'}),h('div',{class:'stats',id:'stats'}),
+  h('div',{class:'tb'},h('input',{type:'search',id:'q',placeholder:'Search name, email, phone, reference or property','aria-label':'Search'}),h('select',{id:'fs','aria-label':'Filter by status'},h('option',{value:'',text:'All statuses'}),STAT.map(s=>h('option',{value:s,text:s})))),
+  h('div',{class:'tw'},h('table',{},h('thead',{},h('tr',{},['Reference','Applicant','Email','Property','Received','Status'].map(x=>h('th',{text:x})))),h('tbody',{id:'rows'}))),
+  h('p',{class:'hint',id:'em',hidden:true,text:'No applications match.'}),h('section',{class:'card',id:'dt',hidden:true}));v.append(wrap);
+ let rows=[];const draw=()=>{const q=$('#q').value.toLowerCase(),s=$('#fs').value;
+  const f=rows.filter(r=>(!s||r.status===s)&&[r.ref,r.name,r.email,r.phone,r.property].join(' ').toLowerCase().includes(q));
+  $('#stats').replaceChildren(...STAT.map(x=>h('div',{class:'stat'},h('b',{text:rows.filter(r=>r.status===x).length}),x)));$('#em').hidden=f.length>0;
+  $('#rows').replaceChildren(...f.map(r=>{const tr=h('tr',{tabindex:'0'},[r.ref,r.name,r.email,r.property,new Date(r.created).toLocaleString()].map(x=>h('td',{text:x})),h('td',{},h('span',{class:'st '+(r.status==='Under Review'?'UR':r.status),text:r.status})));tr.onclick=()=>open(r);tr.onkeydown=e=>{if(e.key==='Enter')open(r)};return tr}))};
+ const open=r=>{const d=$('#dt');d.hidden=false;const sel=h('select',{'aria-label':'Status'},STAT.map(s=>h('option',{value:s,text:s,selected:s===r.status})));const nt=h('textarea',{'aria-label':'Internal notes',maxlength:'4000'});nt.value=r.notes||'';const msg=h('span',{class:'hint',role:'status'});
+  const sv=h('button',{class:'btn p',type:'button',text:'Save changes',onclick:async()=>{try{await DB.collection('applications').doc(r.ref).update({status:sel.value,notes:nt.value});r.status=sel.value;r.notes=nt.value;msg.textContent='Saved.';draw()}catch(x){msg.textContent='Could not save.'}}});
+  const L={};ALL.forEach(f=>f.n&&(L[f.n]=f.l));
+  d.replaceChildren(h('h2',{text:r.ref}),h('p',{class:'hint',text:r.name+' \u2022 received '+new Date(r.created).toLocaleString()}),h('div',{class:'tb'},sel,sv,msg),nt,h('h3',{text:'Answers'}),
+   h('dl',{class:'dl'},Object.entries(r.data||{}).flatMap(([k,x])=>[h('dt',{text:L[k]||k}),h('dd',{text:x===true?'Yes':String(x)})])),h('h3',{text:'Income documents'}),
+   (r.docs||[]).length?h('ul',{},r.docs.map(x=>h('li',{},h('a',{href:'/_blob/'+x.id,target:'_blank',rel:'noopener',text:`${x.name} (${Math.round(x.size/1024)} KB)`})))):h('p',{text:'No files.'}));d.scrollIntoView({behavior:'smooth'})};
+ try{const s=await DB.collection('applications').orderBy('created','desc').get();rows=s.docs.map(d=>d.data());draw()}catch(e){$('#em').hidden=false;$('#em').textContent='Could not load applications.'}
+ $('#q').oninput=draw;$('#fs').onchange=draw}
+route();
+</script>
+</body>
+</html>
